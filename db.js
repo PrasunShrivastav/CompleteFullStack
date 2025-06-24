@@ -1,20 +1,21 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const ObjectId = Schema.Types.ObjectId;
 const user = new Schema({
-  email: { type: string, unique: true },
-  password: { type: string, required: true },
-  name: string,
+  email: { type: String, unique: true },
+  password: { type: String, required: true },
+  name: String,
 });
 const admin = new Schema({
-  email: { type: string, unique: true },
-  password: { type: string, required: true },
-  name: string,
+  email: { type: String, unique: true },
+  password: { type: String, required: true },
+  name: String,
 });
 const course = new Schema({
-  title: string,
-  description: string,
-  price: number,
-  imageUrl: string,
+  title: String,
+  description: String,
+  price: Number,
+  imageUrl: String,
   teacher: ObjectId,
 });
 const purchase = new Schema({

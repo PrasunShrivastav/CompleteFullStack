@@ -14,5 +14,6 @@ app.use("/course", courseRouter);
 async function main() {
   await mongoose.connect(process.env.mongoUrl);
   app.listen(3000);
+  console.log("connected Successfully to MongoDB");
 }
 main();
