@@ -1,6 +1,8 @@
 const express = require("express");
 const { userRouter } = require("./routes/user.js");
 const { courseRouter } = require("./routes/course.js");
+const { adminRouter } = require("./routes/admin.js");
+
 const { default: mongoose } = require("mongoose");
 const dotenv = require("dotenv").config();
 
@@ -10,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use("/user", userRouter);
 app.use("/course", courseRouter);
-// app.use("/admin", adminRouter);
+app.use("/admin", adminRouter);
 async function main() {
   await mongoose.connect(process.env.mongoUrl);
   app.listen(3000);
